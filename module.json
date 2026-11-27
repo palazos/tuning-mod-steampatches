@@ -1,0 +1,14 @@
+{
+  "moduleId": "steampatches",
+  "version": "0.1.0",
+  "minProductVersion": 23,
+  "displayName": "Steam Game Patches",
+  "description": "Same-size byte patches for Steam games, applied to the install folder.",
+  "engineSlot": null,
+  "requires": ["stores"],
+  "conflicts": [],
+  "provides": ["steam-game-patches"],
+  "uiContributions": [],
+  "dex": ["runtime.jar"],
+  "nativeLibs": []
+}
