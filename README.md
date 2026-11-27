@@ -18,7 +18,7 @@ No native libraries. The shortcut toggle and its strings stay in the product APK
 
 Requires the Stores module, any installed version. Uninstalling Stores also removes this module.
 
-Package version stays **0.1.0** until the product bumps it.
+Current package version: **0.1.1**.
 
 ## Product wiring
 

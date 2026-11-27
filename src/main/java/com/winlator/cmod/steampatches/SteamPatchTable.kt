@@ -1,6 +1,7 @@
 package com.winlator.cmod.steampatches
 
 import android.util.Log
+import com.winlator.cmod.steampatches.api.PatchedGame
 import java.io.File
 
 // Byte replacements for Steam games, applied when the files are on disk.
@@ -16,10 +17,15 @@ internal object SteamPatchTable {
         val to: ByteArray,
     )
 
-    private class GamePatch(val summary: String, val replacements: List<Replacement>)
+    private class GamePatch(
+        val title: String,
+        val summary: String,
+        val replacements: List<Replacement>,
+    )
 
     private val byAppId: Map<Int, GamePatch> = mapOf(
         2080820 to GamePatch(
+            "Squad Blast",
             "Lets public matches start and keeps Photon from dropping the session.",
             listOf(
                 // Platform already defaults to Windows. That store becomes Architecture = x86.
@@ -45,6 +51,10 @@ internal object SteamPatchTable {
     )
 
     fun summary(appId: Int): String? = byAppId[appId]?.summary
+
+    fun patchedGames(): List<PatchedGame> =
+        byAppId.map { (appId, patch) -> PatchedGame(appId, patch.title, patch.summary) }
+            .sortedBy { it.title }
 
     fun apply(gameDir: File, appId: Int) {
         val patch = byAppId[appId] ?: return
