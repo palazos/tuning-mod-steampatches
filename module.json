@@ -3,12 +3,18 @@
   "version": "0.1.1",
   "minProductVersion": 23,
   "displayName": "Steam Game Patches",
-  "description": "Same-size byte patches for Steam games, applied to the install folder.",
+  "description": "Changes a few bytes in specific Steam games so they can run correctly here. The patch is applied when a download finishes and again on each launch. The shortcut switch Tuning Game Patch is on by default; turning it off puts the original files back. Open the info button after installing to see which games this version covers. Squad Blast is included, so public matches can start. Stores must be installed.",
   "engineSlot": null,
-  "requires": ["stores"],
+  "requires": [
+    "stores"
+  ],
   "conflicts": [],
-  "provides": ["steam-game-patches"],
+  "provides": [
+    "steam-game-patches"
+  ],
   "uiContributions": [],
-  "dex": ["runtime.jar"],
+  "dex": [
+    "runtime.jar"
+  ],
   "nativeLibs": []
 }
